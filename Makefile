@@ -7,7 +7,7 @@
 PROJECT_DIR := $(shell dirname $(abspath $(lastword $(MAKEFILE_LIST))))
 BUCKET = [OPTIONAL] your-bucket-for-syncing-data (do not include 's3://')
 PROFILE = default
-PROJECT_NAME = Data-Science-Project-Boilerplate
+PROJECT_NAME = Popify
 PYTHON_INTERPRETER = python3
 
 ifeq (,$(shell which conda))
@@ -23,7 +23,7 @@ endif
 ## Install Python Dependencies
 requirements: test_env
 	$(PYTHON_INTERPRETER) -m pip install -U pip setuptools wheel
-	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
+	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt --no-cache-dir
 
 ## Make Dataset
 data: requirements
@@ -31,14 +31,23 @@ data: requirements
 
 ## Delete all compiled Python files
 clean:
-	del /S /Q *.pyc
-	del /S /Q *.pyo
-	del /S /Q __pycache__
+	$(PYTHON_INTERPRETER) -c "import pathlib; [p.unlink() for p in pathlib.Path('.').rglob('*.pyc')]"
 
 ## Lint using flake8
 lint:
+ifdef OS
+    ifeq ($(OS),Windows_NT)
+		tox -e flake8
+		black --check src
+    else
+		tox -e flake8
+		black --check src
+    endif
+else
 	tox -e flake8
 	black --check src
+endif
+
 
 ## Run pre-commit on all files
 precommit:
@@ -77,7 +86,7 @@ create_environment:
 ifeq (True,$(HAS_CONDA))
 		@echo ">>> Detected conda, creating conda environment."
 ifeq (3,$(findstring 3,$(PYTHON_INTERPRETER)))
-	conda create --name $(PROJECT_NAME) python=3
+	conda create --name $(PROJECT_NAME) python=3.10
 else
 	conda create --name $(PROJECT_NAME) python=2.7
 endif

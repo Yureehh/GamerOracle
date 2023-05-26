@@ -16,7 +16,7 @@ The following steps will guide you through the process of setting up the project
    If conda was used to create the environment, activate it with `conda activate <project_name>`. If virtualenv was used, activate the environment with `workon <project_name>`. This activates the environment for use.
 
 4. **Install the Dependencies:**
-   Run `make requirements`. This command installs the necessary Python dependencies for the project as listed in the `requirements.txt` file.
+   Run `make requirements`. This command installs the necessary Python dependencies for the project as listed in the `requirements.txt` file. It sometimes happens to have issues with the installation of `tox`, if this is the case, you can install it manually with `pip install tox`.
 
 5. **Install Pre-commit Hooks:**
    Run `make setup`. This command installs pre-commit hooks, which automatically check your code for common issues before commits.

@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
 #
-# Data-Science-Project-Boilerplate documentation build configuration file, created by
+# Popify documentation build configuration file, created by
 # sphinx-quickstart.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -41,7 +40,7 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "Data-Science-Project-Boilerplate"
+project = "Popify"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -164,7 +163,7 @@ html_static_path = ["_static"]
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "Data-Science-Project-Boilerplate-doc"
+htmlhelp_basename = "Popify-doc"
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -183,8 +182,8 @@ latex_elements = {
 latex_documents = [
     (
         "index",
-        "Data-Science-Project-Boilerplate.tex",
-        "Data-Science-Project-Boilerplate Documentation",
+        "Popify.tex",
+        "Popify Documentation",
         "Yureeh",
         "manual",
     ),
@@ -218,8 +217,8 @@ latex_documents = [
 man_pages = [
     (
         "index",
-        "Data-Science-Project-Boilerplate",
-        "Data-Science-Project-Boilerplate Documentation",
+        "Popify",
+        "Popify Documentation",
         ["Yureeh"],
         1,
     )
@@ -237,10 +236,10 @@ man_pages = [
 texinfo_documents = [
     (
         "index",
-        "Data-Science-Project-Boilerplate",
-        "Data-Science-Project-Boilerplate Documentation",
+        "Popify",
+        "Popify Documentation",
         "Yureeh",
-        "Data-Science-Project-Boilerplate",
+        "Popify",
         "This repo gets cloned everytime I start a new Data Science project. A logical, reasonably standardized, but flexible project structure for doing and sharing data science work. See https://drivendata.github.io/cookiecutter-data-science/",
         "Miscellaneous",
     ),
