@@ -1,6 +1,6 @@
-# New Data Science Project Template
+# Popify
 
-This repository is cloned every time I start a new Data Science project. It provides a logical, reasonably standardized, but flexible project structure for doing and sharing data science work.
+Introducing "Popify," your go-to platform for gaining insights into the world of popular music. Powered by the expansive Spotify API, Popify provides real-time analytics of music trends, offering a deep dive into what's currently defining the music scene. By analyzing key data points including song popularity, artist popularity, genres, and intricate audio features, Popify paints a comprehensive picture of the music landscape as it stands. Whether you're a music fan wanting to keep your finger on the pulse, an artist looking for inspiration, or an industry professional seeking data-driven insights, Popify is your window into the heartbeat of the music world.
 
 ## Project Organization
 

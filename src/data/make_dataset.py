@@ -9,7 +9,25 @@ from spotipy.oauth2 import SpotifyClientCredentials
 
 def populate_db(sp, input_filepath, output_filepath):
     playlists = sp.user_playlists("spotify")
-    print(playlists)
+    output_filepath = Path(output_filepath) / "spotify.csv"
+    with open(output_filepath, "w") as f:
+        for playlist in playlists["items"]:
+            if playlist["owner"]["id"] == "spotify":
+                print(playlist["name"])
+                results = sp.playlist(playlist["id"], fields="tracks,next")
+                tracks = results["tracks"]
+                for item in tracks["items"]:
+                    track = item["track"]
+                    f.write(
+                        f"{track['artists'][0]['name']},{track['name']},{track['popularity']}\n"
+                    )
+                while tracks["next"]:
+                    tracks = sp.next(tracks)
+                    for item in tracks["items"]:
+                        track = item["track"]
+                        f.write(
+                            f"{track['artists'][0]['name']},{track['name']},{track['popularity']}\n"
+                        )
     return
 
 
