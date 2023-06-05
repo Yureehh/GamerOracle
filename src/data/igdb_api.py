@@ -8,6 +8,17 @@ sys.path.append("src")
 from constants import EXCLUDED_FIELDS
 
 
+def get_all_games_features():
+    features = []
+
+    with open("data/external/igdb_games.json") as f:
+        games = json.load(f)
+        for game in games:
+            features.extend(game.keys())
+
+    return sorted(set(features))
+
+
 def get_all_games(
     client_id,
     app_access_token,
@@ -40,7 +51,7 @@ def get_all_games(
         # Increment the offset by the limit
         offset += limit
 
-    print(f"Found {len(game_data)} games")
+    print(f"Found {len(all_games)} games.")
 
     return all_games
 
@@ -59,4 +70,6 @@ def main(external_data_path):
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    print(get_all_games_features())
+    print(len(get_all_games_features()))
