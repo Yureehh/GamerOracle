@@ -7,7 +7,7 @@
 PROJECT_DIR := $(shell dirname $(abspath $(lastword $(MAKEFILE_LIST))))
 BUCKET = [OPTIONAL] your-bucket-for-syncing-data (do not include 's3://')
 PROFILE = default
-PROJECT_NAME = Popify
+PROJECT_NAME = GamerOracle
 PYTHON_INTERPRETER = python3
 
 ifeq (,$(shell which conda))
@@ -27,7 +27,7 @@ requirements: test_env
 
 ## Make Dataset
 data:
-	$(PYTHON_INTERPRETER) src/data/make_dataset.py data/raw data/processed
+	$(PYTHON_INTERPRETER) src/data/make_dataset.py data/raw data/external data/processed
 
 ## Delete all compiled Python files
 clean:

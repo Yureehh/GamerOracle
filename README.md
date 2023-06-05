@@ -1,6 +1,23 @@
-# Popify
+# GamerOracle
 
-Introducing "Popify," your go-to platform for gaining insights into the world of popular music. Powered by the expansive Spotify API, Popify provides real-time analytics of music trends, offering a deep dive into what's currently defining the music scene. By analyzing key data points including song popularity, artist popularity, genres, and intricate audio features, Popify paints a comprehensive picture of the music landscape as it stands. Whether you're a music fan wanting to keep your finger on the pulse, an artist looking for inspiration, or an industry professional seeking data-driven insights, Popify is your window into the heartbeat of the music world.
+GamerOracle is your ultimate gateway into the universe of video gaming. Leveraging state-of-the-art algorithms and a vast gaming database, GamerOracle stands as the premier platform for insightful, personalized gaming recommendations. It’s your key to a tailored gaming journey that aligns seamlessly with your distinct taste and interests.
+
+Through our advanced analytics, GamerOracle delves into your gaming history, preferences, and gameplay trends to handpick an array of game suggestions that align perfectly with your unique gaming persona. Whether you're a seasoned gamer on the hunt for your next conquest, a casual player in search of fresh excitement, or a gaming connoisseur in pursuit of undiscovered classics, GamerOracle is your dedicated ally.
+
+With GamerOracle, explore games of assorted genres, platforms, and eras. Plunge into captivating universes, confront exhilarating challenges, and discover gaming narratives that strike a chord with you. GamerOracle grants you access to comprehensive data on game popularity, user reviews, developer insights, and more.
+
+Stay at the forefront of the gaming landscape, unearth hidden gems, and locate your ideal gaming companion with GamerOracle. Prepare to set sail on an unparalleled gaming journey, where every suggestion feels like it was meticulously crafted for you. Welcome the power of GamerOracle and let it steer you towards your next memorable gaming encounter.
+
+
+## Use Cases
+
+Unregistered User Scenario: For users who have not registered, GamerOracle utilizes its comprehensive database to generate game suggestions. This is achieved by:
+- Analyzing ratings obtained from APIs and user feedback to suggest top-rated games.
+- Examining the user's input of a particular game and suggesting similar games based on rating and resemblance.
+
+Registered User Scenario: For registered users, GamerOracle takes a similar approach but with an added layer of personalization.
+- More emphasis is placed on the user's submitted reviews of games on our platform. This results in a more tailored experience, where recommendations are specifically designed to match the user's gaming preferences and history.
+
 
 ## Project Organization
 
