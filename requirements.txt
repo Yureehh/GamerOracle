@@ -1,14 +1,29 @@
 # local package
 -e .
+alembic
+Authlib
 black
 
 # external requirements
 click
 coverage
+fastapi
 flake8
+httpx
 igdb-api-v4
+itsdangerous
+Jinja2
+passlib
 pre-commit
+psycopg2
+pyjwt
+pytest
 pytest
 python-dotenv>=0.5.1
+python-multipart
+requests
 Sphinx
+SQLAlchemy
+sqlalchemy-utils
 tox
+uvicorn

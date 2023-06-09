@@ -1,4 +1,4 @@
-.PHONY: clean data lint precommit requirements sync_data_to_s3 sync_data_from_s3 test
+.PHONY: clean data precommit requirements sync_data_to_s3 sync_data_from_s3 test
 
 #################################################################################
 # GLOBALS                                                                       #
@@ -27,39 +27,26 @@ requirements: test_env
 
 ## Make Dataset
 data:
-	$(PYTHON_INTERPRETER) src/data/make_dataset.py data/raw data/external data/processed
+	$(PYTHON_INTERPRETER) app/src/data/make_dataset.py app/data/raw app/data/external app/data/processed
 
 ## Delete all compiled Python files
 clean:
 	$(PYTHON_INTERPRETER) -c "import pathlib; [p.unlink() for p in pathlib.Path('.').rglob('*.pyc')]"
 
-## Lint using flake8
-lint:
-ifdef OS
-    ifeq ($(OS),Windows_NT)
-		tox -e flake8
-		black --check src
-    else
-		tox -e flake8
-		black --check src
-    endif
-else
-	tox -e flake8
-	black --check src
-endif
-
-
 ## Run pre-commit on all files
 precommit:
 	pre-commit run --all-files
 
+alembic_init:
+	alembic init alembic
+
 ## Set up project
-setup: requirements
+setup: alembic_init
 	pre-commit install
 
 ## Test python environment is setup correctly
 test_env:
-	$(PYTHON_INTERPRETER) tests/test_environment.py
+	$(PYTHON_INTERPRETER) test_environment.py
 
 ## Run all tests
 test_all:
